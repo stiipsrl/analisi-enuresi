@@ -1,0 +1,90 @@
+/* Navigation styles */
+.nav-button {
+    color: #666;
+    position: relative;
+    white-space: nowrap;
+}
+
+.nav-button:hover {
+    background-color: rgba(37, 99, 235, 0.08);
+    color: #2563eb;
+}
+
+.nav-button.active {
+    background-color: #2563eb;
+    color: white;
+}
+
+.nav-button.active::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 3px;
+    background-color: #2563eb;
+    border-radius: 2px;
+}
+
+/* Tab content visibility */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Calendar styles */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    margin: 16px 0;
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-center: center;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.875rem;
+    background-color: #f3f4f6;
+}
+
+.calendar-day:hover {
+    background-color: #e5e7eb;
+}
+
+/* Chart styles */
+.chart-bar {
+    position: absolute;
+    bottom: 0;
+    width: 40px;
+    border-radius: 4px 4px 0 0;
+    transition: height 0.3s ease;
+}
+
+/* Hide scrollbar but maintain functionality */
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Material Icons adjustments */
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+    vertical-align: middle;
+}

@@ -1,0 +1,409 @@
+<div class="w-[360px] h-[640px] border-[12px] border-gray-800 rounded-[32px] mx-auto my-8 overflow-hidden relative bg-gray-50 shadow-2xl">
+    <div class="h-full overflow-y-auto">
+        <!-- Status Bar -->
+        <div class="bg-gray-800 text-white px-4 py-2 flex justify-between items-center text-xs">
+            <span>9:41</span>
+            <div class="flex items-center space-x-2">
+                <span class="material-symbols-outlined text-sm">signal_cellular_alt</span>
+                <span class="material-symbols-outlined text-sm">wifi</span>
+                <span class="material-symbols-outlined text-sm">battery_full</span>
+            </div>
+        </div>
+
+        <!-- App Header -->
+        <div class="bg-gradient-to-r from-blue-600 to-blue-500 text-white px-4 py-4 sticky top-0 z-10">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <img src="https://stiip.it/wp-content/uploads/2021/11/logo_stiip.svg" alt="Logo" class="w-8 h-8 rounded-full bg-white p-1">
+                    <div>
+                        <span class="text-lg font-medium">Enuresi App</span>
+                        <p class="text-xs text-blue-100">La tua app di monitoraggio</p>
+                    </div>
+                </div>
+                <div class="relative">
+                    <span class="material-symbols-outlined cursor-pointer hover:text-blue-200 transition-colors">notifications</span>
+                    <span class="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="p-4 space-y-6" style="padding-bottom: 150px">
+            <!-- Welcome Card -->
+            <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100 transform hover:scale-[1.02] transition-transform">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                        <span class="material-symbols-outlined text-blue-600">face</span>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-medium text-gray-800">Ciao, Maria! 👋</h3>
+                        <p class="text-gray-600">Monitora i progressi di oggi</p>
+                    </div>
+                </div>
+                <!-- Progress Summary -->
+                <div class="mt-4 pt-4 border-t border-gray-100">
+                    <div class="flex justify-between text-sm">
+                        <span class="text-gray-600">Progressi settimanali</span>
+                        <span class="text-blue-600 font-medium">75%</span>
+                    </div>
+                    <div class="h-2 bg-gray-100 rounded-full mt-2 overflow-hidden">
+                        <div class="h-full bg-blue-600 rounded-full" style="width: 75%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Status Buttons -->
+            <div class="grid grid-cols-2 gap-4">
+                <button onclick="updateStatus('dry')" 
+                        class="group relative bg-white border border-gray-100 rounded-xl p-6 hover:border-green-200 transition-all duration-300">
+                    <div class="absolute inset-0 bg-green-50 opacity-0 group-hover:opacity-100 rounded-xl transition-opacity"></div>
+                    <div class="relative flex flex-col items-center">
+                        <span class="material-symbols-outlined text-3xl text-green-500 mb-2 group-hover:scale-110 transition-transform">check_circle</span>
+                        <span class="font-medium text-gray-800">Asciutto</span>
+                        <span class="text-xs text-gray-500 mt-1">Registra giornata positiva</span>
+                    </div>
+                </button>
+                <button onclick="updateStatus('wet')" 
+                        class="group relative bg-white border border-gray-100 rounded-xl p-6 hover:border-yellow-200 transition-all duration-300">
+                    <div class="absolute inset-0 bg-yellow-50 opacity-0 group-hover:opacity-100 rounded-xl transition-opacity"></div>
+                    <div class="relative flex flex-col items-center">
+                        <span class="material-symbols-outlined text-3xl text-yellow-500 mb-2 group-hover:scale-110 transition-transform">water_drop</span>
+                        <span class="font-medium text-gray-800">Bagnato</span>
+                        <span class="text-xs text-gray-500 mt-1">Registra episodio</span>
+                    </div>
+                </button>
+            </div>
+
+            <!-- Calendar -->
+            <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                <div class="flex justify-between items-center mb-6">
+                    <h4 class="text-lg font-medium text-gray-800 flex items-center">
+                        <span class="material-symbols-outlined mr-2 text-blue-600">calendar_month</span>
+                        Calendario
+                    </h4>
+                    <button class="text-sm text-blue-600 hover:text-blue-700 flex items-center">
+                        <span class="material-symbols-outlined text-sm mr-1">tune</span>
+                        Filtri
+                    </button>
+                </div>
+                <div class="calendar-grid mb-4">
+                    <!-- Calendar will be populated by JS -->
+                </div>
+                <div class="flex justify-center space-x-4 text-sm">
+                    <div class="flex items-center">
+                        <span class="w-3 h-3 bg-green-500 rounded-full mr-2"></span>
+                        <span class="text-gray-600">Asciutto</span>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="w-3 h-3 bg-yellow-500 rounded-full mr-2"></span>
+                        <span class="text-gray-600">Bagnato</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistics -->
+            <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                <div class="flex justify-between items-center mb-6">
+                    <h4 class="text-lg font-medium text-gray-800 flex items-center">
+                        <span class="material-symbols-outlined mr-2 text-blue-600">monitoring</span>
+                        Statistiche
+                    </h4>
+                    <button class="text-sm text-blue-600 hover:text-blue-700 flex items-center">
+                        <span class="material-symbols-outlined text-sm mr-1">trending_up</span>
+                        Vedi dettagli
+                    </button>
+                </div>
+            
+                <!-- Main Chart -->
+                <div class="mb-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <div class="text-sm text-gray-600">Ultimi 7 giorni</div>
+                        <div class="flex space-x-2">
+                            <div class="flex items-center">
+                                <span class="w-3 h-3 bg-green-500 rounded-full mr-1"></span>
+                                <span class="text-xs text-gray-600">Asciutto</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-3 h-3 bg-yellow-500 rounded-full mr-1"></span>
+                                <span class="text-xs text-gray-600">Bagnato</span>
+                            </div>
+                        </div>
+                    </div>
+                    <canvas id="weeklyChart" class="w-full h-48"></canvas>
+                </div>
+            
+                <!-- Secondary Charts -->
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <div class="text-sm text-gray-600 mb-2">Media settimanale</div>
+                        <div class="text-lg font-medium text-gray-800 mb-2">75% asciutto</div>
+                        <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-green-500 rounded-full" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <div class="text-sm text-gray-600 mb-2">Trend</div>
+                        <div class="text-lg font-medium text-green-600 mb-2">+15% miglioramento</div>
+                        <canvas id="trendChart" class="w-full h-8"></canvas>
+                    </div>
+                </div>
+            
+                <!-- Summary Stats -->
+                <div class="grid grid-cols-3 gap-3">
+                    <div class="text-center">
+                        <div class="text-2xl font-semibold text-green-600">5/7</div>
+                        <div class="text-xs text-gray-600">Giorni asciutti</div>
+                    </div>
+                    <div class="text-center border-l border-r border-gray-200">
+                        <div class="text-2xl font-semibold text-blue-600">71%</div>
+                        <div class="text-xs text-gray-600">Success rate</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-semibold text-purple-600">3</div>
+                        <div class="text-xs text-gray-600">Streak attuale</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="absolute bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-6 py-4 flex justify-between items-center">
+            <button class="flex flex-col items-center text-blue-600">
+                <span class="material-symbols-outlined">home</span>
+                <span class="text-xs mt-1">Home</span>
+            </button>
+            <button class="flex flex-col items-center text-gray-400 hover:text-blue-600 transition-colors">
+                <span class="material-symbols-outlined">calendar_month</span>
+                <span class="text-xs mt-1">Calendario</span>
+            </button>
+            <button class="flex flex-col items-center text-gray-400 hover:text-blue-600 transition-colors">
+                <span class="material-symbols-outlined">monitoring</span>
+                <span class="text-xs mt-1">Statistiche</span>
+            </button>
+            <button class="flex flex-col items-center text-gray-400 hover:text-blue-600 transition-colors">
+                <span class="material-symbols-outlined">article</span>
+                <span class="text-xs mt-1">Blog</span>
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<script>
+
+// Demo data
+let selectedDate = null;
+let statusData = {};
+
+// Initialize everything when document is ready
+document.addEventListener('DOMContentLoaded', function() {
+    initCalendar();
+    initWeeklyChart();
+    initTrendChart();
+});
+
+// Initialize calendar
+function initCalendar() {
+    const calendar = document.querySelector('.calendar-grid');
+    if (!calendar) return;
+    
+    calendar.innerHTML = '';
+    
+    // Add day headers
+    const days = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
+    days.forEach(day => {
+        const dayHeader = document.createElement('div');
+        dayHeader.className = 'text-center font-medium text-gray-600 text-sm py-2';
+        dayHeader.textContent = day;
+        calendar.appendChild(dayHeader);
+    });
+
+    // Add calendar days
+    const today = new Date().getDate();
+    for (let i = 1; i <= 31; i++) {
+        const day = document.createElement('div');
+        day.className = `
+            calendar-day relative flex items-center justify-center
+            w-8 h-8 rounded-full cursor-pointer transition-all duration-300
+            ${i === today ? 'bg-blue-100 text-blue-600 font-medium' : 'hover:bg-gray-100'}
+        `;
+        day.textContent = i;
+        day.setAttribute('data-day', i);
+        day.onclick = () => selectDate(i);
+        calendar.appendChild(day);
+    }
+}
+
+// Select date
+function selectDate(day) {
+    const allDays = document.querySelectorAll('.calendar-day');
+    allDays.forEach(d => {
+        d.classList.remove('ring-2', 'ring-blue-500');
+    });
+    
+    const selectedDay = document.querySelector(`.calendar-day[data-day="${day}"]`);
+    if (selectedDay) {
+        selectedDay.classList.add('ring-2', 'ring-blue-500');
+        selectedDate = day;
+    }
+}
+
+// Update status when user clicks asciutto/bagnato
+function updateStatus(status) {
+    if (!selectedDate) {
+        // Animate the calendar to draw attention
+        const calendar = document.querySelector('.calendar-grid').parentElement;
+        calendar.classList.add('animate-bounce');
+        setTimeout(() => calendar.classList.remove('animate-bounce'), 1000);
+        return;
+    }
+    
+    const day = document.querySelector(`.calendar-day[data-day="${selectedDate}"]`);
+    if (!day) return;
+    
+    // Update appearance with animation
+    day.style.transform = 'scale(0.8)';
+    setTimeout(() => {
+        if (status === 'dry') {
+            day.style.backgroundColor = '#bbf7d0';
+            day.style.color = '#166534';
+        } else {
+            day.style.backgroundColor = '#fef08a';
+            day.style.color = '#854d0e';
+        }
+        day.style.transform = 'scale(1)';
+    }, 150);
+    
+    statusData[selectedDate] = status;
+    
+    // Show success feedback
+    const button = document.querySelector(`button[onclick="updateStatus('${status}')"]`);
+    const originalButtonContent = button.innerHTML;
+    button.innerHTML = `
+        <span class="material-symbols-outlined text-3xl mb-2">check</span>
+        <span class="font-medium">Registrato!</span>
+    `;
+    setTimeout(() => {
+        button.innerHTML = originalButtonContent;
+    }, 1000);
+}
+
+// Initialize weekly statistics chart
+function initWeeklyChart() {
+    const ctx = document.getElementById('weeklyChart');
+    if (!ctx) return;
+
+    // Sample data for the week
+    const weeklyData = {
+        labels: ['Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab', 'Dom'],
+        datasets: [{
+            label: 'Asciutto',
+            data: [1, 1, 1, 0, 1, 0, 1],
+            backgroundColor: '#4ade80',
+            borderRadius: 6,
+            barThickness: 12
+        }, {
+            label: 'Bagnato',
+            data: [0, 0, 0, 1, 0, 1, 0],
+            backgroundColor: '#fde047',
+            borderRadius: 6,
+            barThickness: 12
+        }]
+    };
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: weeklyData,
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                x: {
+                    stacked: true,
+                    grid: {
+                        display: false
+                    }
+                },
+                y: {
+                    stacked: true,
+                    max: 1,
+                    ticks: {
+                        stepSize: 1
+                    },
+                    grid: {
+                        display: false
+                    }
+                }
+            },
+            animation: {
+                duration: 2000,
+                easing: 'easeInOutQuart'
+            }
+        }
+    });
+}
+
+// Initialize trend chart
+function initTrendChart() {
+    const ctx = document.getElementById('trendChart');
+    if (!ctx) return;
+
+    // Create gradient fill for the trend line
+    const gradientFill = ctx.getContext('2d').createLinearGradient(0, 0, 0, 40);
+    gradientFill.addColorStop(0, 'rgba(34, 197, 94, 0.2)');
+    gradientFill.addColorStop(1, 'rgba(34, 197, 94, 0)');
+
+    // Sample trend data
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['', '', '', '', '', '', ''],
+            datasets: [{
+                data: [60, 65, 63, 68, 65, 70, 75],
+                borderColor: '#22c55e',
+                borderWidth: 2,
+                backgroundColor: gradientFill,
+                fill: true,
+                tension: 0.4,
+                pointRadius: 0
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                x: {
+                    display: false
+                },
+                y: {
+                    display: false
+                }
+            },
+            animation: {
+                duration: 2000,
+                easing: 'easeInOutQuart'
+            }
+        }
+    });
+}
+
+// Refresh charts periodically (optional)
+setInterval(() => {
+    if (document.getElementById('weeklyChart')) {
+        initWeeklyChart();
+    }
+    if (document.getElementById('trendChart')) {
+        initTrendChart();
+    }
+}, 300000); // Refresh every 5 minutes
+</script>
