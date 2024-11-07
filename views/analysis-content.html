@@ -757,34 +757,97 @@
                 </div>
             </div>
         
-            <!-- Integrazione Blog -->
-            <div class="bg-white p-4 rounded-lg border border-gray-100">
-                <h4 class="font-medium text-gray-800 flex items-center mb-3">
-                    <span class="material-symbols-outlined text-gray-600 mr-2 text-sm">article</span>
-                    Integrazione Blog
-                </h4>
-                <p class="text-sm text-gray-600">
-                    La sezione blog dell'applicazione si integrerà con un CMS WordPress esistente, gestito e mantenuto dal cliente. 
-                    Gli articoli pubblici verranno visualizzati direttamente nell'app tramite integrazione con l'API WordPress.
-                </p>
-            </div>
-        
-            <!-- Note Operative -->
-            <div class="bg-white p-4 rounded-lg border border-gray-100">
-                <h4 class="font-medium text-gray-800 flex items-center mb-3">
-                    <span class="material-symbols-outlined text-gray-600 mr-2 text-sm">store</span>
-                    Gestione Store e Pubblicazione
-                </h4>
-                <div class="text-sm text-gray-600 space-y-2">
-                    <p>
-                        La gestione e i costi degli account sviluppatore su App Store (Apple) e Play Store (Google) sono 
-                        a carico del cliente. Il nostro team si occuperà esclusivamente del rilascio degli aggiornamenti 
-                        dell'applicazione attraverso gli account forniti dal cliente.
+            <div class="bg-gradient-to-br from-gray-50 to-white p-6 rounded-xl border border-gray-100 space-y-6">
+                <!-- Integrazione Blog -->
+                <div class="bg-white p-4 rounded-lg border border-gray-100">
+                    <h4 class="font-medium text-gray-800 flex items-center mb-3">
+                        <span class="material-symbols-outlined text-gray-600 mr-2 text-sm">article</span>
+                        Integrazione Blog
+                    </h4>
+                    <p class="text-sm text-gray-600">
+                        La sezione blog dell'applicazione si integrerà con un CMS WordPress esistente, gestito e mantenuto dal cliente. 
+                        Gli articoli pubblici verranno visualizzati direttamente nell'app tramite integrazione con l'API WordPress.
                     </p>
-                    <p class="text-xs text-gray-500 mt-2">
-                        Nota: Per la pubblicazione iniziale e gli aggiornamenti successivi sarà necessario che il cliente mantenga 
-                        attivi e in regola i relativi account sviluppatore.
-                    </p>
+                </div>
+            
+                <!-- Note Operative -->
+                <div class="bg-white p-4 rounded-lg border border-gray-100">
+                    <h4 class="font-medium text-gray-800 flex items-center mb-3">
+                        <span class="material-symbols-outlined text-gray-600 mr-2 text-sm">store</span>
+                        Gestione Store e Pubblicazione
+                    </h4>
+                    <div class="text-sm text-gray-600 space-y-2">
+                        <p>
+                            La gestione e i costi degli account sviluppatore su App Store (Apple) e Play Store (Google) sono 
+                            a carico del cliente. Il nostro team si occuperà esclusivamente del rilascio degli aggiornamenti 
+                            dell'applicazione attraverso gli account forniti dal cliente.
+                        </p>
+                        <p class="text-xs text-gray-500 mt-2">
+                            Nota: Per la pubblicazione iniziale e gli aggiornamenti successivi sarà necessario che il cliente mantenga 
+                            attivi e in regola i relativi account sviluppatore.
+                        </p>
+                    </div>
+                </div>
+    
+                <!-- Future Evolution Note -->
+                <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                    <h4 class="font-medium text-blue-800 flex items-center mb-3">
+                        <span class="material-symbols-outlined text-blue-600 mr-2 text-sm">upgrade</span>
+                        Evoluzione Futura: Backend Dedicato
+                    </h4>
+                    <div class="space-y-3">
+                        <div class="text-sm text-blue-800">
+                            <p>
+                                L'applicazione verrà inizialmente sviluppata con un approccio "frontend-first", permettendo un lancio rapido 
+                                e un test del mercato. In una fase successiva, potrà essere implementato un backend dedicato per:
+                            </p>
+                            <ul class="list-disc pl-4 mt-2 space-y-1 text-blue-700">
+                                <li>Espandere le funzionalità della piattaforma</li>
+                                <li>Migliorare la gestione dei dati</li>
+                                <li>Ottimizzare le performance</li>
+                            </ul>
+                        </div>
+    
+                        <div class="bg-white p-3 rounded border border-blue-200 text-sm mb-3">
+                            <p class="font-medium text-blue-800 mb-1">Nota sulla Pubblicazione App Store</p>
+                            <p class="text-blue-700">
+                                È importante notare che lo sviluppo iniziale senza backend potrebbe presentare alcune limitazioni:
+                            </p>
+                            <ul class="list-disc pl-4 mt-2 text-blue-700 space-y-1">
+                                <li>La gestione dei token e dell'autenticazione potrebbe non essere adeguatamente sicura</li>
+                                <li>Potrebbero esserci problemi o limitazioni di pubblicazione dell'app su Apple App Store per la violazione di alcune policy</li>
+                            </ul>
+                            <p class="text-blue-700 mt-2">
+                                Queste considerazioni verranno valutate durante lo sviluppo e, se necessario, affrontate nella fase di implementazione del backend.
+                            </p>
+                        </div>
+    
+                        <div class="bg-white p-3 rounded border border-blue-200 text-sm">
+                            <p class="font-medium text-blue-800 mb-1">Approccio Evolutivo</p>
+                            <div class="space-y-2 text-blue-700">
+                                <p class="flex items-center">
+                                    <span class="material-symbols-outlined text-blue-500 mr-2 text-sm">looks_one</span>
+                                    <span><strong>Fase 1:</strong> Implementazione frontend-first per validazione rapida</span>
+                                </p>
+                                <p class="flex items-center">
+                                    <span class="material-symbols-outlined text-blue-500 mr-2 text-sm">looks_two</span>
+                                    <span><strong>Fase 2:</strong> Valutazione delle necessità di scalabilità</span>
+                                </p>
+                                <p class="flex items-center">
+                                    <span class="material-symbols-outlined text-blue-500 mr-2 text-sm">looks_3</span>
+                                    <span><strong>Fase 3:</strong> Eventuale implementazione backend dedicato</span>
+                                </p>
+                            </div>
+                        </div>
+    
+                        <div class="text-xs text-blue-600 mt-2 flex items-start">
+                            <span class="material-symbols-outlined text-blue-500 mr-1 text-sm">tips_and_updates</span>
+                            <p>
+                                Questo approccio incrementale permette di ottimizzare i costi iniziali e validare il prodotto sul mercato, 
+                                pianificando gli investimenti successivi in base ai risultati ottenuti.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
