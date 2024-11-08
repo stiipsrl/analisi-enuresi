@@ -22,13 +22,13 @@
     <!-- Top App Bar -->
     <header class="fixed top-0 w-full bg-blue-600 text-white z-50">
         <div class="flex items-center px-6 py-4">
-            <span class="material-symbols-outlined mr-4">medical_services</span>
-            <span class="text-xl font-medium">Enuresi App - Presentazione Progetto</span>
+            <span class="material-symbols-outlined mr-4 text-base sm:text-lg md:text-xl">medical_services</span>
+            <span class="text-lg sm:text-xl md:text-2xl font-medium">Enuresi App - Presentazione Progetto</span>
         </div>
     </header>
 
     <!-- Navigation Menu -->
-    <nav class="sticky top-16 z-40 bg-white border-b border-gray-200 px-4 py-2" style="top: 60px;">
+    <nav class="sticky top-16 z-40 bg-white border-b border-gray-200 px-0 sm:px-4 py-2" style="top: 60px;">
         <div class="max-w-7xl mx-auto flex gap-2 overflow-x-auto hide-scrollbar">
             <button onclick="showTab('overview')" id="nav-overview" 
                     class="nav-button active inline-flex items-center px-6 py-3 rounded-full text-sm font-medium transition-all">
@@ -40,6 +40,16 @@
                 <span class="material-symbols-outlined mr-2">analytics</span>
                 Analisi Agile
             </button>
+            <button onclick="showTab('design')" id="nav-design" 
+                    class="nav-button inline-flex items-center px-6 py-3 rounded-full text-sm font-medium transition-all">
+                <span class="material-symbols-outlined mr-2">brush</span>
+                UX/UI Design
+            </button>
+            <button onclick="showTab('gdpr')" id="nav-gdpr" 
+                    class="nav-button inline-flex items-center px-6 py-3 rounded-full text-sm font-medium transition-all">
+                <span class="material-symbols-outlined mr-2">gavel</span>
+                GDPR
+            </button>
             <button onclick="showTab('demo')" id="nav-demo" 
                     class="nav-button inline-flex items-center px-6 py-3 rounded-full text-sm font-medium transition-all">
                 <span class="material-symbols-outlined mr-2">smartphone</span>
@@ -49,9 +59,11 @@
     </nav>
 
     <!-- Main Content -->
-    <main class="max-w-7xl mx-auto px-4 pt-24" style="padding-bottom: 300px;">
+    <main class="max-w-7xl mx-auto px-0 pt-24" style="padding-bottom: 300px;">
         <div id="overview" class="tab-content active"></div>
         <div id="analysis" class="tab-content"></div>
+        <div id="design" class="tab-content"></div>
+        <div id="gdpr" class="tab-content"></div>
         <div id="demo" class="tab-content"></div>
     </main>
 

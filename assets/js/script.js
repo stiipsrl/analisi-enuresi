@@ -4,9 +4,13 @@ async function loadContent() {
         const overviewContent = await fetch('views/overview-content.html').then(r => r.text());
         const analysisContent = await fetch('views/analysis-content.html').then(r => r.text());
         const demoContent = await fetch('views/demo-content.html').then(r => r.text());
+        const designContent = await fetch('views/design-content.html').then(r => r.text());
+        const gdprContent = await fetch('views/gdpr-content.html').then(r => r.text());
 
         document.getElementById('overview').innerHTML = overviewContent;
         document.getElementById('analysis').innerHTML = analysisContent;
+        document.getElementById('design').innerHTML = designContent;
+        document.getElementById('gdpr').innerHTML = gdprContent;
         document.getElementById('demo').innerHTML = demoContent;
         
         // Initialize calendar if we're on demo tab
